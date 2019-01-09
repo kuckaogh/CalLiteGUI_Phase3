@@ -44,7 +44,7 @@ set AppJars=%AppJars%;%JarDir%\guava-11.0.2.jar
 set AppJars=%AppJars%;%JarDir%\XAOptimizer.jar
 set AppJars=%AppJars%;%JarDir%\log4j-1.2.17.jar
 set AppJars=%AppJars%;%~dp0..\bin
-set AppJars=%AppJars%;%~dp0..\calgui.jar
+set AppJars=%AppJars%;%~dp0..\CalLiteGUI.jar
 
 
 :---------------------------------:
@@ -73,6 +73,6 @@ echo %temp_wrims2%/../../../../jre8/bin/java -Xmx1000m -Xss1280K -Djava.library.
 : call java to run ControllerBatch class                :
 :-------------------------------------------------------:
 
-start /min /wait "CalLiteRun%ScenarioName%" %temp_wrims2%/../../../../jre8/bin/java -Xmx1000m -Xss1280K -Djava.library.path=%PATH% %CLASSPATH% gov.ca.water.calgui.batch.Singleton -config="%configFilePath%"
+start "CalLiteRun%ScenarioName%" %temp_wrims2%/../../../../jre8/bin/java -Xmx1000m -Xss1280K -Djava.library.path=%PATH% %CLASSPATH% gov.ca.water.calgui.batch.Singleton -config="%configFilePath%"
 
-exit
+pause
