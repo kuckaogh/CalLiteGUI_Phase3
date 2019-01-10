@@ -47,13 +47,15 @@ public class Singleton {
 			} else {
 				LOG.error("=================Run ends with errors (" + Integer.toString(StudyUtils.total_errors) + ","
 						+ Integer.toString(Error.getTotalError()) + " =================");
+				
 			}
+			//System.in.read();
 		} catch (RecognitionException ex) {
 			ex.printStackTrace();
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		}
-		System.exit(0);
+		//System.exit(0);
 	}
 
 	public static void main(String[] args) {
