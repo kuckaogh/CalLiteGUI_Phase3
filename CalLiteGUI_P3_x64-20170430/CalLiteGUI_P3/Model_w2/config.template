@@ -4,7 +4,7 @@ Begin Config
 
 WreslPlus              yes
 MainFile               {MainFile}
-Solver                 XA  
+Solver                 CBC  
 DvarFile               {DvarFile}
 SvarFile               {SvarFile}
 SvarAPart              CalLite 
@@ -23,6 +23,8 @@ PrefixInitToDvarFile   Yes
 IlpLog  no
 IlpLogFormat   CplexLp
 IlpLogVarValue no
+
+enableProgressLog Yes
 
 End Config
 

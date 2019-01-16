@@ -1,3 +1,4 @@
+set javahome=%~dp0..\jre8\bin
 echo on
 
 IF [%1]==[] (
@@ -27,24 +28,27 @@ set temp_wrims2=%dirname%run\
 :------------------:
 : wrims2 lib jars  :
 :------------------:
-set JarDir=%~dp0\lib
-set VistaLibDir=%~dp0\vscript\lib\vista\lib
-set AppJars=%JarDir%\WRIMSv2.jar
-set AppJars=%AppJars%;%JarDir%\gurobi.jar
-set AppJars=%AppJars%;%VistaLibDir%\heclib.jar
-set AppJars=%AppJars%;%JarDir%\jnios.jar
-set AppJars=%AppJars%;%JarDir%\jpy.jar
-set AppJars=%AppJars%;%JarDir%\misc.jar
-set AppJars=%AppJars%;%JarDir%\pd.jar
-set AppJars=%AppJars%;%VistaLibDir%\vista.jar
-set AppJars=%AppJars%;%JarDir%\lpsolve55j.jar
-set AppJars=%AppJars%;%JarDir%\commons-io-2.1.jar
-set AppJars=%AppJars%;%JarDir%\javatuples-1.2.jar
-set AppJars=%AppJars%;%JarDir%\guava-11.0.2.jar
-set AppJars=%AppJars%;%JarDir%\XAOptimizer.jar
-set AppJars=%AppJars%;%JarDir%\log4j-1.2.17.jar
-set AppJars=%AppJars%;%~dp0..\bin
-set AppJars=%AppJars%;%~dp0..\CalLiteGUI.jar
+set JarDir2=%~dp0\lib
+set libDir=%~dp0\lib
+
+set AppJars=%AppJars%;%JarDir2%\heclib.jar
+set AppJars=%AppJars%;%JarDir2%\jnios.jar
+set AppJars=%AppJars%;%JarDir2%\jpy.jar
+set AppJars=%AppJars%;%JarDir2%\misc.jar
+set AppJars=%AppJars%;%JarDir2%\pd.jar
+set AppJars=%AppJars%;%JarDir2%\vista.jar
+set AppJars=%AppJars%;%JarDir2%\commons-io-2.1.jar
+set AppJars=%AppJars%;%JarDir2%\javatuples-1.2.jar
+set AppJars=%AppJars%;%JarDir2%\guava-11.0.2.jar
+set AppJars=%AppJars%;%JarDir2%\XAOptimizer.jar
+set AppJars=%AppJars%;%JarDir2%\kryo-2.24.0.jar
+set AppJars=%AppJars%;%JarDir2%\objenesis-1.2.jar
+set AppJars=%AppJars%;%JarDir2%\minlog-1.2.jar
+set AppJars=%AppJars%;%JarDir2%\antlr-3.5.2-runtime.jar
+set AppJars=%AppJars%;%JarDir2%\coinor.jar
+set AppJars=%AppJars%;%JarDir2%\sqljdbc4-2.0.jar
+set AppJars=%AppJars%;%JarDir2%\mysql-connector-java-5.1.42-bin.jar
+set AppJars=%AppJars%;%JarDir2%\WRIMSv2.jar
 
 
 :---------------------------------:
@@ -55,24 +59,23 @@ set ExternalDir=%RunDir%External
 :------------:
 : class path :
 :------------:
-set CLASSPATH=-classpath "%ExternalDir%;%AppJars%"
+set CLASSPATH=-classpath "%ExternalDir%;%AppJars%;%libDir%"
 
 :------------:
 : dll path   :
 :------------:
-set PATH=%ExternalDir%;%JarDir%;%VistaLibDir%
-
+set PATH=%ExternalDir%;%JarDir2%;%libDir%
 
 : --------------------------------------------------------------------------------------:
 : Write the full java run string to last_singleton.bat for debugging if needed :
 :---------------------------------------------------------------------------------------:
 
-echo %temp_wrims2%/../../../../jre8/bin/java -Xmx1000m -Xss1280K -Djava.library.path=%PATH% %CLASSPATH% gov.ca.water.calgui.batch.Singleton -config="%configFilePath%" > last_singleton.bat
+echo %javahome%/java -Xms1024m -Xss1024K -Djava.library.path=%PATH% %CLASSPATH% wrimsv2.components.ControllerBatch -config="%configFilePath%" > last_singleton.bat
 
 :-------------------------------------------------------:
 : call java to run ControllerBatch class                :
 :-------------------------------------------------------:
 
-start "CalLiteRun%ScenarioName%" %temp_wrims2%/../../../../jre8/bin/java -Xmx1000m -Xss1280K -Djava.library.path=%PATH% %CLASSPATH% gov.ca.water.calgui.batch.Singleton -config="%configFilePath%"
+start "CalLiteRun%ScenarioName%" %javahome%/java -Xms1024m -Xss1024K -Djava.library.path=%PATH% %CLASSPATH% wrimsv2.components.ControllerBatch -config="%configFilePath%"
 
 pause
