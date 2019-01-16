@@ -57,10 +57,10 @@
 	<classpathentry kind="lib" path="lib/swixml.jar"/>
 	<classpathentry kind="lib" path="lib/vista.jar"/>
 	<classpathentry kind="lib" path="lib/winpack-3.8.2.jar"/>
-	<classpathentry kind="lib" path="lib/WRIMSv2.jar"/>
 	<classpathentry kind="lib" path="lib/xerces_2_5_0.jar"/>
 	<classpathentry kind="lib" path="lib/xml-apis-ext.jar"/>
 	<classpathentry kind="lib" path="lib/xml-apis.jar"/>
 	<classpathentry kind="lib" path="lib/xulrunner-windows.jar"/>
+	<classpathentry kind="lib" path="Model_w2/lib/WRIMSv2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
