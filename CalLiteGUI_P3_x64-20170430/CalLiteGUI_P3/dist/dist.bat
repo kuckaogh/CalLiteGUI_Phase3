@@ -8,7 +8,7 @@ mkdir %a%
 
 xcopy /s /i /e ..\Config %a%\Config
 xcopy /s /i /e ..\jre8   %a%\jre8 
-xcopy /s /i /e ..\lib    %a%\lib
+
 xcopy /s /i /e ..\log4j  %a%\log4j  
 xcopy /s /i /e ..\Model_w2   %a%\Model_w2
 xcopy /s /i /e ..\Scenarios  %a%\Scenarios
