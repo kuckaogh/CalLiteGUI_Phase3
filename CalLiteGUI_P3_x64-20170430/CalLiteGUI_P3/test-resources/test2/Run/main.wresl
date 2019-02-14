@@ -34,24 +34,28 @@ initial {
 
 SEQUENCE CYCLE1 {
     model   FAM
-    condition month>=Jan .and. month<=May .and. AllocationSwitch==2
     order   1
+	condition month>=Jan .and. month<=May .and. AllocationSwitch==2
+    
 	}
  
 SEQUENCE CYCLE2 {
     model   SJRBASE
-    condition int(Dynamic_SJR)==1
     order   2
+	condition int(Dynamic_SJR)==1
+    
     }
 SEQUENCE CYCLE3 {
     model   SJR_WQ1
-    condition int(Dynamic_SJR)==1
     order   3
+	condition int(Dynamic_SJR)==1
+    
     }
 SEQUENCE CYCLE4 {
     model   SJR_PULSE
-    condition (month==APR .or. month==MAY) .and. int(Dynamic_SJR)==1
     order   4
+	condition (month==APR .or. month==MAY) .and. int(Dynamic_SJR)==1
+    
     }
 SEQUENCE CYCLE5 {
     model   SJR_WQ2
@@ -60,8 +64,9 @@ SEQUENCE CYCLE5 {
     }
 SEQUENCE CYCLE6 {
     model   VAMP_AND_DO
-    condition month>=APR .and. month<=SEP .and. int(Dynamic_SJR)==1
     order   6
+	condition month>=APR .and. month<=SEP .and. int(Dynamic_SJR)==1
+    
     }   
 SEQUENCE CYCLE7 {
     model   Upstream
