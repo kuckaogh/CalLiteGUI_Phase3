@@ -171,7 +171,9 @@ public final class MonitorSvcImpl implements IMonitorSvc {
 		String value = "";
 		try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 			List<String> list = stream.collect(Collectors.toList());
+			if (list.size()>0) {
 			value = list.get(list.size() - 1);
+			}
 		} catch (NoSuchFileException ex) {
 			value = "Waiting ... no progress file available";
 			LOG.debug(value);
