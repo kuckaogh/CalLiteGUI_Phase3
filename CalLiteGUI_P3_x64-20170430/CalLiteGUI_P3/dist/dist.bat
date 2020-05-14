@@ -1,4 +1,4 @@
-set a=z:\CalLiteGUI_P3_202005XX
+set a=z:\CalLiteGUI_P3_dist202005XX
 
 echo %a%
 
