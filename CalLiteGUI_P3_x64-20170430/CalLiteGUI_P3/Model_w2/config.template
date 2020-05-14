@@ -4,7 +4,7 @@ Begin Config
 
 WreslPlus              yes
 MainFile               {MainFile}
-Solver                 CBC  
+Solver                 {Solver} 
 DvarFile               {DvarFile}
 SvarFile               {SvarFile}
 SvarAPart              CalLite 

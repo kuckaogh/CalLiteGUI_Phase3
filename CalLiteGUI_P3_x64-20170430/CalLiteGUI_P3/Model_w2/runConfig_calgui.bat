@@ -78,4 +78,4 @@ echo %javahome%/java -Xms1024m -Xss1024K -Djava.library.path=%PATH% %CLASSPATH% 
 
 start "CalLiteRun%ScenarioName%" %javahome%/java -Xms1024m -Xss1024K -Djava.library.path=%PATH% %CLASSPATH% wrimsv2.components.ControllerBatch -config="%configFilePath%"
 
-pause
+exit

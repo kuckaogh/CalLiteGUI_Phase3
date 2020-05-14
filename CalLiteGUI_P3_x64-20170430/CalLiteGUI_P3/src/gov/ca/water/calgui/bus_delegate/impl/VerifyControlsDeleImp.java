@@ -58,7 +58,7 @@ public class VerifyControlsDeleImp implements IVerifyControlsDele {
 		List<String> errorControlsIds = new ArrayList<String>();
 		// The list is for radio buttons.
 		List<String> removeList = new ArrayList<String>(Arrays.asList("run_rdbProb", "rdbRegQS_UD", "btnDSS_Auto",
-				"rdbRegQS_1641BO", "btnDSS_Manual", "rdbRegQS_D1485", "op_rdb3", "rdbRegQS_D1641", "run_rdbDet","solver_xa","solver_cbc"));
+				"rdbRegQS_1641BO", "btnDSS_Manual", "rdbRegQS_D1485", "op_rdb3", "rdbRegQS_D1641", "run_rdbDet","solver_rdbxa","solver_rdbcbc"));
 		// The list is for Text Field.
 		removeList.addAll(Arrays.asList("hyd_DSS_Init_F", "run_txfoDSS", "run_txfScen", "fac_txf18", "fac_txf19",
 				"fac_txf16", "fac_txf17", "fac_txf15", "fac_txf13", "fac_txf23", "hyd_DSS_SV", "fac_txf21", "fac_txf22",

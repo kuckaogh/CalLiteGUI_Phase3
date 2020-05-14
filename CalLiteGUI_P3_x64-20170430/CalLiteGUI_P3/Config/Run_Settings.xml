@@ -112,12 +112,12 @@
 			<gridbagconstraints weightx="0.5"
 				anchor="GridBagConstraints.NORTHWEST" gridx="1" gridy="50" />
 			<buttongroup>
-				<radiobutton name="solver_xa" id="solver_xa" text="XA"
+				<radiobutton name="solver_rdbxa" id="solver_rdbxa" text="XA"
 					selected="False">
 					<gridbagconstraints anchor="GridBagConstraints.NORTHWEST"
 						gridx="0" gridy="0" />
 				</radiobutton>
-				<radiobutton name="solver_cbc" id="solver_cbc" text="CBC"
+				<radiobutton name="solver_rdbcbc" id="solver_rdbcbc" text="CBC"
 					selected="True" enabled="True">
 					<gridbagconstraints anchor="GridBagConstraints.NORTHWEST"
 						gridx="0" gridy="1" gridwidth="1"/>

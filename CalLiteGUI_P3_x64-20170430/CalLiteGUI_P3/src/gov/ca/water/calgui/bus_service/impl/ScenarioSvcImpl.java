@@ -506,6 +506,7 @@ public final class ScenarioSvcImpl implements IScenarioSvc {
 
 		String oDSS = ((JTextField) swingEngine.find("run_txfoDSS")).getText().trim();
 
+		Boolean solver_cbc_isSelected = ((JRadioButton)swingEngine.find("solver_rdbcbc")).isSelected(); 
 		String[] newtext = new String[20];
 		Integer[] lineNum = new Integer[20];
 
@@ -558,6 +559,11 @@ public final class ScenarioSvcImpl implements IScenarioSvc {
 		Integer iEndDay = TimeOperation.numberOfDays(iEndMonth, endYr);
 
 		Map<String, String> configMap = new HashMap<String, String>();
+		if (solver_cbc_isSelected) {
+			configMap.put("Solver", "CBC");	
+		} else {
+			configMap.put("Solver", "XA");	
+		}
 		configMap.put("MainFile", runDirAbsPath + "\\main.wresl");
 		configMap.put("DvarFile", FilenameUtils.removeExtension(newtext[6]) + ".dss");
 		configMap.put("SvarFile", newtext[5]);
@@ -585,6 +591,7 @@ public final class ScenarioSvcImpl implements IScenarioSvc {
 		String configText = wrimsv2.wreslparser.elements.Tools
 				.readFileAsString(Constant.MODEL_W2_DIR + "//config.template");
 
+		configText = configText.replace("{Solver}", configMap.get("Solver"));
 		configText = configText.replace("{SvarFile}", configMap.get("SvarFile"));
 		configText = configText.replace("{SvarFPart}", configMap.get("SvarFPart"));
 		configText = configText.replace("{InitFile}", configMap.get("InitFile"));
