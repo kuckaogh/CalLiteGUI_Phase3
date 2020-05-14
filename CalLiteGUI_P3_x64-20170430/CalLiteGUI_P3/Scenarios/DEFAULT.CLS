@@ -6,6 +6,8 @@ spnRunStartMonth|Oct
 spnRunStartYear|1921
 spnRunEndMonth|Sep
 spnRunEndYear|2003
+solver_rdbxa|false
+solver_rdbcbc|true
 run_rdbDet|true
 run_rdbProb|false
 run_rdbD1485|false
@@ -21,7 +23,7 @@ hyd_rdb3|true
 hyd_ANNKM|true
 btnDSS_Auto|true
 btnDSS_Manual|false
-hyd_DSS_SV|CL_FUTURE_BO_20140827_SV.DSS
+hyd_DSS_SV|CL_FUTURE_BO_20170425_SV.DSS
 hyd_DSS_SV_F|2020D09E
 hyd_DSS_Init|CL_INIT.dss
 hyd_DSS_Init_F|INITIAL
@@ -207,3 +209,6 @@ END DATATABLEMODELS
 REGULATIONOPTIONS
 0|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|0|0|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|3|0|0|0|0
 END REGULATIONOPTIONS
+WSIDILABEL
+BO-Future LOD (Unedited)
+END WSIDILABEL
